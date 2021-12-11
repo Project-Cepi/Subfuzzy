@@ -1,5 +1,8 @@
 {
   "entrypoint": "${project.group}.${project.mainClass}",
   "name": "${project.name}",
-  "version": "${project.version}"
+  "version": "${project.version}",
+  "meta": {
+    "downloadURL": "https://github.com/Project-Cepi/Subfuzzy/releases/download/latest/Subfuzzy-1.0.0-all.jar"
+  }
 }

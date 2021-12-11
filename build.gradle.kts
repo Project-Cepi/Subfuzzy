@@ -41,9 +41,6 @@ dependencies {
     // Compile Minestom into project
     compileOnly("com.github.Minestom:Minestom:-SNAPSHOT")
 
-    // Add KStom
-    compileOnly("com.github.Project-Cepi:KStom:b195c64c8d")
-
     // Add fuzzywuzzy
     implementation("me.xdrop:fuzzywuzzy:1.3.1")
 
