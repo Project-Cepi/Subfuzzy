@@ -9,9 +9,6 @@ class SubfuzzyArguments(
     vararg val subcommands: String,
     val fuzzProvider: CommandSender.(input: String, possibility: String, chance: Int) -> Unit
 ) : ArgumentWord(id) {
-
-
-
     init {
         from(*subcommands)
 
