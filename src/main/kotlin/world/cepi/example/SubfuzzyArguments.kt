@@ -4,25 +4,31 @@ import me.xdrop.fuzzywuzzy.FuzzySearch
 import net.minestom.server.command.CommandSender
 import net.minestom.server.command.builder.arguments.ArgumentWord
 
-class SubfuzzyArguments(
+typealias FuzzProvider = CommandSender.(input: String, possibility: String, chance: Int) -> Unit
+
+data class SubFuzz(val possibilities: List<String>, val provider: FuzzProvider)  {
+    operator fun invoke(sender: CommandSender, input: String) {
+        FuzzySearch.extractTop(input, possibilities, 1)
+            .firstOrNull()
+            ?.let {
+                provider(
+                    sender,
+                    input,
+                    it.string,
+                    it.score
+                )
+            }
+    }
+}
+class SubFuzzArgument(
     id: String,
-    vararg val subcommands: String,
-    val fuzzProvider: CommandSender.(input: String, possibility: String, chance: Int) -> Unit
+    val subFuzz: SubFuzz
 ) : ArgumentWord(id) {
     init {
-        from(*subcommands)
+        from(*subFuzz.possibilities.toTypedArray())
 
         setCallback { sender, exception ->
-            FuzzySearch.extractTop(exception.input, subcommands.toList(), 1)
-                .firstOrNull()
-                ?.let {
-                    fuzzProvider(
-                        sender,
-                        exception.input,
-                        it.string,
-                        it.score
-                    )
-                }
+            subFuzz(sender, exception.input)
         }
     }
 
