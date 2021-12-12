@@ -1,4 +1,4 @@
-package world.cepi.example
+package world.cepi.subfuzzy
 
 import net.minestom.server.command.builder.arguments.Argument
 

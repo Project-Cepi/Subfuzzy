@@ -1,7 +1,5 @@
-package world.cepi.example
+package world.cepi.subfuzzy
 
-import me.xdrop.fuzzywuzzy.FuzzySearch
-import net.minestom.server.command.CommandSender
 import net.minestom.server.command.builder.arguments.ArgumentWord
 
 class SubFuzzArgument(
