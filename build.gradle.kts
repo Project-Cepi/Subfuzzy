@@ -39,7 +39,7 @@ dependencies {
     compileOnly(kotlin("reflect"))
 
     // Compile Minestom into project
-    compileOnly("com.github.Minestom:Minestom:3843cacef5")
+    compileOnly("com.github.Minestom:Minestom:4ee5cbe424")
 
     // Add fuzzywuzzy
     implementation("me.xdrop:fuzzywuzzy:1.3.1")
