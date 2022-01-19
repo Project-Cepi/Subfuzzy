@@ -42,7 +42,7 @@ dependencies {
     compileOnly("com.github.Minestom:Minestom:4ee5cbe424")
 
     // Add fuzzywuzzy
-    implementation("me.xdrop:fuzzywuzzy:1.3.3")
+    implementation("me.xdrop:fuzzywuzzy:1.3.4")
 
     // import kotlinx serialization
     compileOnly("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
