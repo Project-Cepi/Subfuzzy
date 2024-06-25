@@ -45,7 +45,7 @@ dependencies {
     implementation("me.xdrop:fuzzywuzzy:1.4.0")
 
     // import kotlinx serialization
-    compileOnly("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.0")
+    compileOnly("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
 }
 
 configurations {
